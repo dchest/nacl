@@ -30,17 +30,16 @@ func TestCreateAndOpen(t *testing.T) {
 	encryptAndDecrypt(t, []byte{})
 }
 
-/*
 func TestCreateToAndOpenTo(t *testing.T) {
-	k := make([]byte, KeySize)
-	n := make([]byte, NonceSize)
+	var k [KeySize]byte
+	var n [NonceSize]byte
 	text := []byte("Hello world")
 	m := make([]byte, len(text) + ZeroBytes)
 	copy(m[ZeroBytes:], text)
 	c := make([]byte, len(m))
-	CreateTo(c, m, n, k)
+	CreateTo(c, m, &n, &k)
 	dec := make([]byte, len(c))
-	if !OpenTo(dec, c, n, k) {
+	if !OpenTo(dec, c, &n, &k) {
 		t.Errorf("failed to open box")
 	}
 	// Message would be: m[ZeroBytes:]
@@ -51,19 +50,18 @@ func TestCreateToAndOpenTo(t *testing.T) {
 }
 
 func TestOpenInvalid(t *testing.T) {
-	k := make([]byte, KeySize)
-	n := make([]byte, NonceSize)
+	var k [KeySize]byte
+	var n [NonceSize]byte
 	c := make([]byte, 200)
-	if Open(c, n, k) != nil {
+	if Open(c, &n, &k) != nil {
 		t.Errorf("opened invalid box")
 	}
 	// Zero-length ciphertext.
-	if Open([]byte{}, n, k) != nil {
+	if Open([]byte{}, &n, &k) != nil {
 		t.Errorf("opened invalid box")
 	}
 }
 
-*/
 var (
 	keyarr [32]byte
 	key = &keyarr

@@ -1,10 +1,8 @@
-// poly1305. 
-// Read more: http://cr.yp.to/mac.html
+// Copyright 2012 The Go Authors. All rights reserved.
+// Use of this source code is governed by a BSD-style
+// license that can be found in the LICENSE file.
 //
-// Translated to Go from C by Dmitry Chestnykh
-// Public domain
-//
-// Original implementation from NaCl:
+// Based on original implementation from NaCl:
 // crypto_onetimeauth/poly1305/53
 // D. J. Bernstein
 // Public domain.

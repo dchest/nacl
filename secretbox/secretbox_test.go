@@ -1,3 +1,7 @@
+// Copyright 2012 The Go Authors. All rights reserved.
+// Use of this source code is governed by a BSD-style
+// license that can be found in the LICENSE file.
+
 package secretbox
 
 import (
@@ -148,16 +152,3 @@ func aesCtrHmacBox(m, n, k []byte) []byte {
 	copy(out, mac)
 	return out
 }
-/*
-func BenchmarkAES(b *testing.B) {
-	b.StopTimer()
-	k := make([]byte, 32)
-	n := make([]byte, aes.BlockSize)
-	m := make([]byte, 1024)
-	b.StartTimer()
-	for i := 0; i < b.N; i++ {
-		_ = aesCtrHmacBox(m, n, k)
-	}
-	b.SetBytes(int64(len(m)))
-}
-*/

@@ -1,9 +1,6 @@
-// poly1305. 
-// Must be used with cipher, such as AES.
-// Read more: http://cr.yp.to/mac.html
-//
-// Translated to Go from C by Dmitry Chestnykh
-// Public domain
+// Copyright 2012 The Go Authors. All rights reserved.
+// Use of this source code is governed by a BSD-style
+// license that can be found in the LICENSE file.
 //
 // Original implementation from NaCl:
 // crypto_onetimeauth/poly1305/ref 

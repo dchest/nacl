@@ -5,13 +5,12 @@ import (
 	"testing"
 )
 
-/*
 func TestCreateOpen(t *testing.T) {
-	pk, sk := KeyPair()
+	KeyPair(pk, sk)
 	m := []byte("Hello world")
-	n := make([]byte, 24)
-	c := Create(m, n, pk, sk)
-	dec := Open(c, n, pk, sk)
+	var n [24]byte
+	c := Create(m, &n, pk, sk)
+	dec := Open(c, &n, pk, sk)
 	if dec == nil {
 		t.Errorf("failed to decrypt")
 	}
@@ -19,7 +18,6 @@ func TestCreateOpen(t *testing.T) {
 		t.Errorf("Open: expected %q, got %q", string(m), string(dec))
 	}
 }
-*/
 
 var alicesk = [32]byte{
 	0x77,0x07,0x6d,0x0a,0x73,0x18,0xa5,0x7d,

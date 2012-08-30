@@ -28,17 +28,19 @@ var testData = []struct {
 	},
 }
 
-/*
 func TestXor(t *testing.T) {
+	var n [8]byte
+	var k [32]byte
 	for i, v := range testData {
 		c := make([]byte, len(v.m))
-		Xor(c, v.m, v.n, v.k)
+		copy(n[:], v.n)
+		copy(k[:], v.k)
+		Xor(c, v.m, &n, &k)
 		if !bytes.Equal(c, v.correct) {
 			t.Errorf("[%d] expected %x, got %x", i, v.correct, c)
 		}
 	}
 }
-*/
 
 func TestCore(t *testing.T) {
 	var in [16]byte //:= make([]byte, 16)

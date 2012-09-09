@@ -3,5 +3,7 @@ Pure Go implementation of NaCl: Networking and Cryptography Library.
 
 !!! NOTE !!!
 
-[Official go.crypto repository](http://code.google.com/p/go/source/browse?repo=crypto)
-now includes NaCl implementation. Please use it instead of this one.
+Official go.crypto repository now includes NaCl implementation.
+Please use it instead of this one.
+
+Link: http://code.google.com/p/go/source/browse?repo=crypto
